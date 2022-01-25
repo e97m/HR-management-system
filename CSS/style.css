@@ -2,7 +2,7 @@
 
 * {
     font-family: 'EB Garamond', serif;
-    font-size: 25px;
+    font-size: 24px;
     box-sizing: border-box;
 }
 
@@ -75,6 +75,7 @@ footer {
 .card {
     background-color:#8DB596;
 }
+
 
 .h {
     font-size: 40px;
