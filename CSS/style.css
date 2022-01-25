@@ -2,7 +2,7 @@
 
 * {
     font-family: 'EB Garamond', serif;
-    font-size: 30px;
+    font-size: 25px;
     box-sizing: border-box;
 }
 
@@ -67,8 +67,8 @@ footer {
 }
 
 .personImg {
-    width: 600px;
-    height: 600px;
+    width: 450px;
+    height: 450px;
     padding: 50px;
 }
 
@@ -76,7 +76,8 @@ footer {
     background-color:#8DB596;
 }
 
-h1 {
+.h {
+    font-size: 40px;
     color: white;
     stroke: black;
     stroke-width: 2px;
