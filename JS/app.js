@@ -61,6 +61,7 @@ Employee.prototype.render = function(){
   } else if (this.level =='Junior'){
     mainSection = document.getElementsByClassName('juniorSec')
   }
+  
   // let mainSection = document.getElementsByClassName('flex-container')
   let divEl = document.createElement('div');
   mainSection[0].appendChild(divEl);

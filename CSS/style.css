@@ -75,3 +75,9 @@ footer {
 .card {
     background-color:#8DB596;
 }
+
+h1 {
+    color: white;
+    stroke: black;
+    stroke-width: 2px;
+}
