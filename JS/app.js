@@ -53,8 +53,15 @@ person7.finalSalary();
 
 // Write the employees's dada
 Employee.prototype.render = function(){
-  // document.write(`<p>${this.employeeID}, ${this.fullName}, ${ this.department}, ${this.level}, ${this.imageURL}, ${this.salary} </p>`)
-  let mainSection = document.getElementsByClassName('flex-container')
+  let mainSection
+  if (this.level =='Senior'){
+    mainSection = document.getElementsByClassName('seniorSec')
+  } else if(this.level =='Mid-Senior'){
+    mainSection = document.getElementsByClassName('mid-seniorSec')
+  } else if (this.level =='Junior'){
+    mainSection = document.getElementsByClassName('juniorSec')
+  }
+  // let mainSection = document.getElementsByClassName('flex-container')
   let divEl = document.createElement('div');
   mainSection[0].appendChild(divEl);
   divEl.className ='card'

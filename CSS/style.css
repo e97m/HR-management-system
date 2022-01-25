@@ -59,9 +59,8 @@ footer {
 .flex-container {
     display: flex;
     gap: 25px;
-    /* padding: 35px; */
     margin: 15px;
-    align-items: center;
+    align-items:flex-start;
     justify-content: space-between;
     text-align: center;
     flex-wrap: wrap;
