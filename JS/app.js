@@ -15,12 +15,24 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min) + min); 
   }
 
-let afterTax
-
 function netSalary (beforTax) {
+      let afterTax
       afterTax = beforTax - (beforTax*7.5/100)
       return afterTax
     }
+
+// function finalSalary (){
+//   let theSalary
+//   if (this.level=='Senior'){
+//     theSalary = netSalary(getRandomInt(1500,2000))
+//   } else if(this.level=='Mid-Senior'){
+//     theSalary = netSalary(getRandomInt(1000,1500))
+//   } else if (this.level=='Junior'){
+//     theSalary = netSalary(getRandomInt(500,1000))
+//   }
+//   return theSalary
+// }
+
 
 let jSalary = netSalary(getRandomInt(500,1000))
 let mSalary = netSalary(getRandomInt(1000,1500))
@@ -38,12 +50,9 @@ employee.prototype.render = function(){
   document.write(`<p>${this.employeeID}, ${this.fullName}, ${ this.department}, ${this.level}, ${this.imageURL}, ${this.salary} </p>`)
 }
 
-person1.render()
-person2.render()
-person3.render()
-person4.render()
-person5.render()
-person6.render()
-person7.render()
+let personArr = [person1, person2, person3, person4, person5, person6, person7]
+for ( let i=0 ; i <personArr.length ; i++){
+  personArr[i].render()
+}
 
 
