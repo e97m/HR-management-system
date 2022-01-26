@@ -16,7 +16,7 @@
     </header>
     
     <main>
-        <div class="flex-container">
+        <div class="grid-container">
         <section class="seniorSec"> 
             <p class="h">Senior</p> 
         </section>
@@ -33,13 +33,20 @@
         <br>
         <br>
         <form  id="add-person">
-            <fieldset>
+            <fieldset class="theForm">
                 <legend>Add new person</legend>
+                <div>
                 <label for="fullName">Full Name</label>
+                </div>
+                <div>
                 <input type="text" name="fullName" id="fullName"/>
-                <br>
-                <br>
+                </div>
+                <!-- <br>
+                <br> -->
+                <div>
                 <label for="department">Department</label>
+                </div>
+                <div>
                 <!-- <input type="text"  name="department" id="department"> -->
                 <select id="department" name="department">
                     <option value="Administration">Administration</option>
@@ -47,23 +54,33 @@
                     <option value="Development">Development</option>
                     <option value="Finance">Finance</option>
                 </select>
-                <br>
-                <br>
+                </div>
+                <!-- <br>
+                <br> -->
+                <div>
                 <label for="level">Level</label>
+                </div>
+                <div>
                 <!-- <input type="list" name="level" id="level"/> -->
                 <select id="level" name="level">
                     <option value="Senior">Senior</option>
                     <option value="Mid-Senior">Mid-Senior</option>
                     <option value="Junior">Junior</option>
                 </select>
-                <br>
-                <br>
+                </div>
+                <!-- <br>
+                <br> -->
+                <div>
                 <label for="imageURL">Image URL</label>
+                </div>
+                <div>
                 <input type="text" name="imageURL" id="imageURL">
-                <br>
-                <br>
+                </div>
+                <!-- <br>
+                <br> -->
+                <div>
                 <input type="submit" value="Add new person">
-
+                </div>
 
             </fieldset>
         </form>

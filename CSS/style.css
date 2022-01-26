@@ -56,19 +56,21 @@ footer {
     margin: 2px;
 }
 
-.flex-container {
-    display: flex;
+.grid-container {
+    /* display: flex; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 25px;
     margin: 15px;
-    align-items:flex-start;
+    /* align-items:flex-start; */
     justify-content: space-between;
     text-align: center;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
 }
 
 .personImg {
-    width: 450px;
-    height: 450px;
+    width: 550px;
+    height: 550px;
     padding: 50px;
 }
 
@@ -82,4 +84,11 @@ footer {
     color: white;
     stroke: black;
     stroke-width: 2px;
+}
+
+.theForm {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 50px 50px 50px 50px;
+    padding: 50px;
 }
