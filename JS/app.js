@@ -7,8 +7,13 @@ function Employee (employeeID, fullName, department,level, imageURL, salary) {
     this.department = department
     this.level = level
     this.imageURL = imageURL
-    this.salary = salary
+    this.salary = salary;
+    this.finalSalary()
+    Employee.allEmployees.push(this);
 }
+
+Employee.allEmployees =[];
+console.log(Employee.allEmployees)
 
 // Get random number to use it in salary
 function getRandomInt(min, max) {
@@ -37,61 +42,53 @@ Employee.prototype.finalSalary = function () {
 
 // Instantiation, Add the employees data using Empolee constructor
 const person1 = new Employee(1000,'Ghazi Samer','Administration','Senior','assets/Ghazi.jpg')
-person1.finalSalary();
 const person2 = new Employee(1001,'Lana Ali','Finance','Senior','assets/Lana.jpg')
-person2.finalSalary();
 const person3 = new Employee(1002,'Tamara Ayoub','Marketing','Senior','assets/Tamara.jpg')
-person3.finalSalary();
 const person4 = new Employee(1003,'Safi Walid','Administration','Mid-Senior','assets/Safi.jpg')
-person4.finalSalary();
 const person5 = new Employee(1004,'Omar Zaid','Development','Senior','assets/Omar.jpg')
-person5.finalSalary();
 const person6 = new Employee(1005,'Rana Saleh','Development','Junior','assets/Rana.jpg')
-person6.finalSalary();
 const person7 = new Employee(1006,'Hadi Ahmad','Finance','Mid-Senior','assets/Hadi.jpg')
-person7.finalSalary();
 
 // Write the employees's dada
-Employee.prototype.render = function(){
-  let mainSection
-  if (this.level =='Senior'){
-    mainSection = document.getElementsByClassName('seniorSec')
-  } else if(this.level =='Mid-Senior'){
-    mainSection = document.getElementsByClassName('mid-seniorSec')
-  } else if (this.level =='Junior'){
-    mainSection = document.getElementsByClassName('juniorSec')
-  }
+let mainSection
+function render (){
+  for(let i=0;i<Employee.allEmployees.length;i++){
+    let person = Employee.allEmployees[i]
   
-  // let mainSection = document.getElementsByClassName('grid-container')
-  let divEl = document.createElement('div');
-  mainSection[0].appendChild(divEl);
-  divEl.className ='card'
+    // let mainSection
+    if (person.level =='Senior'){
+      mainSection = document.getElementById('seniorSec')
+    } else if(person.level =='Mid-Senior'){
+      mainSection = document.getElementById('mid-seniorSec')
+    } else if (person.level =='Junior'){
+      mainSection = document.getElementById('juniorSec')
+    }
+    
+    let divEl = document.createElement('div');
+    mainSection.appendChild(divEl);
+    divEl.className ='card'
 
-  let imgEl = document.createElement('img')
-  divEl.appendChild(imgEl)
-  imgEl.setAttribute('src', this.imageURL)
-  imgEl.setAttribute('alt', this.fullName);
-  imgEl.className ='personImg'
+    let imgEl = document.createElement('img')
+    divEl.appendChild(imgEl)
+    imgEl.setAttribute('src', person.imageURL)
+    imgEl.setAttribute('alt', person.fullName);
+    imgEl.className ='personImg'
 
-  let p1El = document.createElement('p')
-  divEl.appendChild(p1El)
-  p1El.textContent = `Name: ${this.fullName} - ID: ${this.employeeID}`
+    let p1El = document.createElement('p')
+    divEl.appendChild(p1El)
+    p1El.textContent = `Name: ${person.fullName} - ID: ${person.employeeID}`
 
-  let p2El = document.createElement('p')
-  divEl.appendChild(p2El)
-  p2El.textContent = `Department: ${this.department} - Level: ${this.level}`
+    let p2El = document.createElement('p')
+    divEl.appendChild(p2El)
+    p2El.textContent = `Department: ${person.department} - Level: ${person.level}`
 
-  let p3El = document.createElement('p')
-  divEl.appendChild(p3El)
-  p3El.textContent = `${this.salary}`
+    let p3El = document.createElement('p')
+    divEl.appendChild(p3El)
+    p3El.textContent = `${person.salary}`
+  }
 }
 
-// Render the employees's dada
-let personArr = [person1, person2, person3, person4, person5, person6, person7]
-for ( let i=0 ; i <personArr.length ; i++){
-  personArr[i].render()
-}
-
+render()
 
 //Employee ID generator
 let newID = 1006
@@ -99,7 +96,6 @@ function autoID (){
  newID = newID + 1
  return newID
 }
-
 
 //Creating a form for adding new person 
 let personForm= document.getElementById('add-person');
@@ -114,7 +110,23 @@ function addNewPerson(event){
 
   let newPerson = new Employee(autoID(), fullName, department,level, imageURL)
   newPerson.finalSalary()
-  newPerson.render()
+
+  // mainSection =''
+  render()
+  setData()
 }
 
+function setData(){
+  let data = JSON.stringify(Employee.allEmployees)
+  localStorage.setItem('persons',data)
+}
 
+function getItem(){
+  let stringObj = localStorage.getItem('persons');
+  let parsObj = JSON.parse(stringObj);
+  if (parsObj !== null){
+    Employee.allEmployees = parsObj
+  }
+}
+
+getItem();
