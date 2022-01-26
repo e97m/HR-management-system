@@ -62,7 +62,7 @@ Employee.prototype.render = function(){
     mainSection = document.getElementsByClassName('juniorSec')
   }
   
-  // let mainSection = document.getElementsByClassName('flex-container')
+  // let mainSection = document.getElementsByClassName('grid-container')
   let divEl = document.createElement('div');
   mainSection[0].appendChild(divEl);
   divEl.className ='card'
