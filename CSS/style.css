@@ -2,7 +2,7 @@
 
 * {
     font-family: 'EB Garamond', serif;
-    font-size: 26px;
+    font-size: 20px;
     box-sizing: border-box;
     color: white;
 }
@@ -28,7 +28,7 @@ header {
 .navButton {
     padding: 20px 50px;
     /* color: black ; */
-    font-size: 40px;
+    font-size: 30px;
     text-decoration: none;
     background-color:#8DB596;
     border: black;
@@ -62,7 +62,7 @@ footer {
 .grid-container {
     /* display: flex; */
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 5fr;
     gap: 25px;
     margin: 15px;
     /* align-items:flex-start; */
@@ -71,19 +71,31 @@ footer {
     /* flex-wrap: wrap; */
 }
 
+.clearclass{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 25px;
+    margin: 15px;
+    justify-content: space-between;
+    text-align: center;
+}
+
 .personImg {
-    width: 550px;
-    height: 550px;
-    padding: 50px;
+    /* /* max-width: 100%; */
+    object-fit: scale-down; 
+    width: 390px;
+    /* height: 390px; */
+    padding: 25px;
 }
 
 .card {
     background-color:#8DB596;
+    border-radius: 30px;
 }
 
 
 .h {
-    font-size: 40px;
+    font-size: 30px;
     stroke-width: 2px;
 }
 
@@ -127,14 +139,15 @@ main .table {
 
   table, td {
     border: 1px solid #2E2E2E;
-    /* width: 700px; */
     height: 70px;
     text-align: center;
     background-color: #8DB596;
+    /* padding: 15px; */
   }
 
 .THead {
     background-color: #2E2E2E;
-    font-size: 35px;
+    font-size: 30px;
+    padding: 15px;
 }
 
