@@ -1,18 +1,17 @@
 'use strict';
 
-//Getting data
 let allEmployees = []
+let allDepartments = []
+
+//Getting data
 function getItem(){
-   
     let stringObj = localStorage.getItem('persons');
     let parsObj = JSON.parse(stringObj);
     if (parsObj !== null){
         allEmployees = parsObj
       }
-  }
-  
-  getItem();
-  console.log(allEmployees)
+}
+getItem();
 
 //Traversing the array to calculate each answer for the table
 let sumEmployeesAdmin = 0 , sumSalaryAdmin =0
@@ -51,10 +50,8 @@ function DepartmentData (name, totalEmployees, totalSalary,avgSalary) {
     this.totalEmployees = totalEmployees
     this.totalSalary = totalSalary
     this.avgSalary = avgSalary
-    DepartmentData.allDepartments.push(this);
+    allDepartments.push(this);
 }
-
-DepartmentData.allDepartments = []
 
 // Instantiation
 const administration= new DepartmentData('Administration',sumEmployeesAdmin,sumSalaryAdmin,avgAdmin)
@@ -64,8 +61,8 @@ const finance= new DepartmentData('Finance',sumEmployeesFin,sumSalaryFin,avgFin)
 const total= new DepartmentData('Total',totalEmployees,totalSalary,avgSalary)
 
 //write the table
-for(let i=0; i<DepartmentData.allDepartments.length;i++){
-let department = DepartmentData.allDepartments[i];
+for(let i=0; i<allDepartments.length;i++){
+let department = allDepartments[i];
     let table = document.getElementById('acc-table')
 
     let trElA = document.createElement('tr')
@@ -81,9 +78,15 @@ let department = DepartmentData.allDepartments[i];
 
     let td2El = document.createElement('td');
     trElA.appendChild(td2El);
-    td2El.textContent = department.totalSalary;
+    td2El.textContent = round(department.totalSalary , 2);
 
     let td3El = document.createElement('td');
     trElA.appendChild(td3El);
-    td3El.textContent = department.avgSalary;
+    td3El.textContent = round(department.avgSalary , 2);
+}
+
+// convert to 2 digit after decimal point
+function round(value, precision) {
+    var multiplier = Math.pow(10, precision || 0);
+    return Math.round(value * multiplier) / multiplier;
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="CSS/style.css">
     <title>Home</title>
 </head>
+
 <body>
     <header>
         <nav>
@@ -14,77 +16,77 @@
             <a href="accounting.html"><button type="button" class="navButton">ACCOUNTING</button></a>
         </nav>
     </header>
-    
+
     <main>
         <div class="grid-container">
-        <section class="seniorSec" id="seniorSec"> 
-            <p class="h">Senior</p> 
-        </section>
-        
-        <section class="mid-seniorSec" id="mid-seniorSec">
-            <p class="h">Mid-Senior</p>
-        </section>
-        
-        <section class="juniorSec" id="juniorSec">
-            <p class="h">Junior</p>
-        </section>
-    </div>
-    <section>
-        <br>
-        <br>
-        <form  id="add-person">
-            <fieldset class="theForm">
-                <legend>Add new person</legend>
-                <div>
-                <label for="fullName">Full Name</label>
-                </div>
-                <div>
-                <input type="text" name="fullName" id="fullName"/>
-                </div>
-                <!-- <br>
-                <br> -->
-                <div>
-                <label for="department">Department</label>
-                </div>
-                <div>
-                <!-- <input type="text"  name="department" id="department"> -->
-                <select id="department" name="department" class="departmentList">
-                    <option value="Administration" class="departmentList">Administration</option>
-                    <option value="Marketing" class="departmentList">Marketing</option>
-                    <option value="Development" class="departmentList">Development</option>
-                    <option value="Finance" class="departmentList">Finance</option>
-                </select>
-                </div>
-                <!-- <br>
-                <br> -->
-                <div>
-                <label for="level">Level</label>
-                </div>
-                <div>
-                <!-- <input type="list" name="level" id="level"/> -->
-                <select id="level" name="level" class="levelList">
-                    <option value="Senior" class="levelList">Senior</option>
-                    <option value="Mid-Senior" class="levelList">Mid-Senior</option>
-                    <option value="Junior" class="levelList">Junior</option>
-                </select>
-                </div>
-                <!-- <br>
-                <br> -->
-                <div>
-                <label for="imageURL">Image URL</label>
-                </div>
-                <div>
-                <input type="text" name="imageURL" id="imageURL">
-                </div>
-                <!-- <br>
-                <br> -->
-                <div>
-                <input type="submit" value="Add new person" class="submitB">
-                </div>
+            <p class="h">Senior</p>
+            <section class="seniorSec clearclass" id="seniorSec">
+            </section>
 
-            </fieldset>
-        </form>
-    </section>
+            <p class="h">Mid-Senior</p>
+            <section class="mid-seniorSec clearclass" id="mid-seniorSec">
+            </section>
+
+            <p class="h">Junior</p>
+            <section class="juniorSec clearclass" id="juniorSec">
+            </section>
+        </div>
+        <section>
+            <br>
+            <br>
+            <form id="add-person">
+                <fieldset class="theForm">
+                    <legend>Add new person</legend>
+                    <div>
+                        <label for="fullName">Full Name</label>
+                    </div>
+                    <div>
+                        <input type="text" name="fullName" id="fullName" />
+                    </div>
+                    <!-- <br>
+                <br> -->
+                    <div>
+                        <label for="department">Department</label>
+                    </div>
+                    <div>
+                        <!-- <input type="text"  name="department" id="department"> -->
+                        <select id="department" name="department" class="departmentList">
+                            <option value="Administration" class="departmentList">Administration</option>
+                            <option value="Marketing" class="departmentList">Marketing</option>
+                            <option value="Development" class="departmentList">Development</option>
+                            <option value="Finance" class="departmentList">Finance</option>
+                        </select>
+                    </div>
+                    <!-- <br>
+                <br> -->
+                    <div>
+                        <label for="level">Level</label>
+                    </div>
+                    <div>
+                        <!-- <input type="list" name="level" id="level"/> -->
+                        <select id="level" name="level" class="levelList">
+                            <option value="Senior" class="levelList">Senior</option>
+                            <option value="Mid-Senior" class="levelList">Mid-Senior</option>
+                            <option value="Junior" class="levelList">Junior</option>
+                        </select>
+                    </div>
+                    <!-- <br>
+                <br> -->
+                    <div>
+                        <label for="imageURL">Image URL</label>
+                    </div>
+                    <div>
+                        <input type="text" name="imageURL" id="imageURL">
+                    </div>
+                    <!-- <br>
+                <br> -->
+                    <div>
+                        <input type="submit" value="Add new person" class="submitB">
+                    </div>
+
+                </fieldset>
+            </form>
+        </section>
     </main>
 
     <footer>
@@ -96,11 +98,12 @@
             <a href="https://www.instagram.com/?hl=en">
                 <img src="assets/instagram.png" alt="lnstagram" class="contact-img">
             </a>
-            <a href="https://www.facebook.com/" >
+            <a href="https://www.facebook.com/">
                 <img src="assets/facebook.png" alt="facebook" class="contact-img">
             </a>
         </div>
     </footer>
     <script src="JS/app.js"> </script>
 </body>
+
 </html>
