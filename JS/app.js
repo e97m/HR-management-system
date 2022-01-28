@@ -87,14 +87,17 @@ function render() {
     let p1El = document.createElement('p')
     divEl.appendChild(p1El)
     p1El.textContent = `Name: ${person.fullName} - ID: ${person.employeeID}`
+    p1El.className ='card-name-ID'
 
     let p2El = document.createElement('p')
     divEl.appendChild(p2El)
     p2El.textContent = `Department: ${person.department} - Level: ${person.level}`
+    p2El.className ='card-dep-level'
 
     let p3El = document.createElement('p')
     divEl.appendChild(p3El)
     p3El.textContent = `${person.salary}`
+    p3El.className ='card-salary'
   }
 }
 
