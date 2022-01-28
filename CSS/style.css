@@ -141,22 +141,21 @@ main .table {
     align-items: center;
     justify-content: center;
     width:max-content;
-    padding: 50px;
+    padding: 2vw;
     margin-left: auto;
     margin-right: auto;
 }
 
   table, td {
-    border: 1px solid #2E2E2E;
-    height: 70px;
+    border: 0.2vw solid #2E2E2E;
+    height: 8vw;
     text-align: center;
     background-color: #8DB596;
-    /* padding: 15px; */
   }
 
 .THead {
     background-color: #2E2E2E;
-    font-size: 30px;
-    padding: 15px;
+    font-size: 2.5vw;
+    padding: 1.5vw;
 }
 
