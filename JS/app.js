@@ -40,6 +40,7 @@ Employee.prototype.finalSalary = function () {
 }
 
 // Instantiation, Add the employees data using Empolee constructor
+  //another way to prrevent dublication: if(localStorage.getItem('') === null) {{const person1 = new Employee(1000, 'Ghazi Samer', 'Administration', 'Senior', 'assets/Ghazi.jpg') ...}
 const person1 = new Employee(1000, 'Ghazi Samer', 'Administration', 'Senior', 'assets/Ghazi.jpg')
 const person2 = new Employee(1001, 'Lana Ali', 'Finance', 'Senior', 'assets/Lana.jpg')
 const person3 = new Employee(1002, 'Tamara Ayoub', 'Marketing', 'Senior', 'assets/Tamara.jpg')
@@ -56,7 +57,7 @@ let juniorSection = document.getElementById('juniorSec')
 function render() {
   //clear the rendered data if any (to prevent dublication)
   seniorSection.innerHTML = ''
-  mSeniorSection.innerHTML = ''
+  mSeniorSection.innerHTML = '' // or use the suggestion in line 44
   juniorSection.innerHTML = ''
 
   // call one by one the objects from the array of objects that the constructer created
@@ -101,8 +102,6 @@ function render() {
   }
 }
 
-
-
 //Employee ID generator
 let newID = 1006
 function autoID() {
@@ -130,14 +129,14 @@ function addNewPerson(event) {
 
 // data sitting function
 function setData() {
-  let data = JSON.stringify(allEmployees)
-  localStorage.setItem('persons', data)
+  let data = JSON.stringify(allEmployees)  // convert to JSON format
+  localStorage.setItem('persons', data)  // creat data inside local storage
 }
 
 //data getting function
 function getItem() {
-  let stringObj = localStorage.getItem('persons');
-  let parsObj = JSON.parse(stringObj);
+  let stringObj = localStorage.getItem('persons'); //call data from local storage
+  let parsObj = JSON.parse(stringObj);  // return to noraml format
   if (parsObj !== null) {
     allEmployees = parsObj
   }

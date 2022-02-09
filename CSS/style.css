@@ -159,3 +159,6 @@ main .table {
     padding: 1.5vw;
 }
 
+@media screen and (max-width: 700px) {
+    /*to have special style for the small screens*/
+}
